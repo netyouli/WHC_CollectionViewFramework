@@ -10,7 +10,7 @@
 
 
 ###该组件支持参数自定义样式说明如下：
-```objective-c
+```swift
 class  WHC_MenuViewParam{
     /// 缓存菜单key
     var cacheWHCMenuKey: String!;
@@ -77,7 +77,7 @@ class  WHC_MenuViewParam{
 ![image](https://github.com/netyouli/WHC_CollectionViewFramework/tree/master/WHC_CollectionViewDemo/gif/whc.gif)
 
 ####运行效果OneStyle调用方式代码如下：
-```objective-c
+```swift
     let menuParam = WHC_MenuViewParam.getWHCMenuViewDefaultParam(titles: ["WHC","公司通知","直销客户","渠道客户","拜访管理","拜访回馈","回馈问题","销售计划","项目报备","项目跟踪","合同管理","收款管理","工作小结","请假申请","费用申请","汇总统计","发布通知","客户审核","回馈批注","小结批注","报备审核","市场推广","售后服务","费用审核","请假审批","w","h","c","吴海超","吴","超","海","iOS","Android","WP","手机","苹果","大神"], imageNames: ["icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2"], cacheWHCMenuKey: "WHC-集合菜单样式一");
 
     let menuView = WHC_MenuView(frame: UIScreen.mainScreen().bounds, menuViewParam: menuParam);
@@ -87,7 +87,7 @@ class  WHC_MenuViewParam{
 
 
 ####运行效果TwoStyle调用方式代码如下：
-```objective-c
+```swift
     self.automaticallyAdjustsScrollViewInsets = false;
     let menuParam = WHC_MenuViewParam.getWHCMenuViewDefaultParam(titles: ["WHC","公司通知","直销客户","渠道客户","拜访管理","拜访回馈","回馈问题","销售计划","项目报备","项目跟踪","合同管理","收款管理","工作小结","请假申请","费用申请","汇总统计","发布通知","客户审核","回馈批注","小结批注","报备审核","市场推广","售后服务","费用审核","请假审批","w","h","c","吴海超","吴","超","海","iOS","Android","WP","手机","苹果","大神"], imageNames: ["icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2","icon3","icon1","icon2"], cacheWHCMenuKey: "WHC-集合菜单样式二");
 
@@ -98,7 +98,7 @@ class  WHC_MenuViewParam{
 ```
 
 ####运行效果ThreeStyle调用方式代码如下：
-```objective-c
+```swift
     let menuParam = WHC_MenuViewParam.getWHCMenuViewDefaultParam(titles: nil, imageNames: nil , cacheWHCMenuKey: "");
     menuParam.canDelete = false;          // 不能删除
     menuParam.canSort = false;            // 不能排序
@@ -121,7 +121,7 @@ class  WHC_MenuViewParam{
 
 
 ####运行效果FourStyle调用方式代码如下：
-```objective-c
+```swift
     let menuParam = WHC_MenuViewParam.getWHCMenuViewDefaultParam(titles: nil, imageNames: nil, cacheWHCMenuKey: "");
     menuParam.isDynamicInsertMenuItem = true;   // 动态插入
     menuParam.insertMenuItemImageName = "add";  // 插入图片
