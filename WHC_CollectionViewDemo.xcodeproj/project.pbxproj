@@ -7,13 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31C0CBD1BE1A85B008511AE /* whc.gif in Resources */ = {isa = PBXBuildFile; fileRef = C31C0CBC1BE1A85B008511AE /* whc.gif */; settings = {ASSET_TAGS = (); }; };
+		C31C0CBF1BE1A88E008511AE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C31C0CBE1BE1A88E008511AE /* README.md */; settings = {ASSET_TAGS = (); }; };
+		C3D5BC7E1BE0680900690811 /* WHC_StyleThreeVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D5BC7D1BE0680900690811 /* WHC_StyleThreeVCCell.xib */; settings = {ASSET_TAGS = (); }; };
 		C3F0B5611BE052C600048975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5601BE052C600048975 /* AppDelegate.swift */; };
-		C3F0B5631BE052C600048975 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5621BE052C600048975 /* ViewController.swift */; };
-		C3F0B5661BE052C600048975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5641BE052C600048975 /* Main.storyboard */; };
+		C3F0B5631BE052C600048975 /* WHC_StyleOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5621BE052C600048975 /* WHC_StyleOneVC.swift */; };
 		C3F0B5681BE052C600048975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5671BE052C600048975 /* Assets.xcassets */; };
 		C3F0B56B1BE052C600048975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5691BE052C600048975 /* LaunchScreen.storyboard */; };
 		C3F0B5761BE052C600048975 /* WHC_CollectionViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5751BE052C600048975 /* WHC_CollectionViewDemoTests.swift */; };
 		C3F0B5811BE052C600048975 /* WHC_CollectionViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5801BE052C600048975 /* WHC_CollectionViewDemoUITests.swift */; };
+		C3F0B5901BE0533C00048975 /* WHC_StyleTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B58E1BE0533C00048975 /* WHC_StyleTwoVC.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5911BE0533C00048975 /* WHC_StyleTwoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B58F1BE0533C00048975 /* WHC_StyleTwoVC.xib */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5941BE0535000048975 /* WHC_StyleThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5921BE0535000048975 /* WHC_StyleThreeVC.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5951BE0535000048975 /* WHC_StyleThreeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5931BE0535000048975 /* WHC_StyleThreeVC.xib */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5981BE0536E00048975 /* WHC_StyleFourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5961BE0536E00048975 /* WHC_StyleFourVC.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5991BE0536E00048975 /* WHC_StyleFourVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5971BE0536E00048975 /* WHC_StyleFourVC.xib */; settings = {ASSET_TAGS = (); }; };
+		C3F0B59B1BE0538600048975 /* WHC_StyleOneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B59A1BE0538600048975 /* WHC_StyleOneVC.xib */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5B41BE0540A00048975 /* WHC_Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A11BE0540A00048975 /* WHC_Asset.m */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5B51BE0540A00048975 /* WHC_PhotoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A31BE0540A00048975 /* WHC_PhotoListCell.m */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5B61BE0540A00048975 /* WHC_CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A51BE0540A00048975 /* WHC_CameraVC.m */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5B71BE0540A00048975 /* WHC_CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5A61BE0540A00048975 /* WHC_CameraVC.xib */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5B81BE0540A00048975 /* WHC_ChoicePictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A81BE0540A00048975 /* WHC_ChoicePictureVC.m */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5B91BE0540A00048975 /* WHC_ChoicePictureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5A91BE0540A00048975 /* WHC_ChoicePictureVC.xib */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5BA1BE0540A00048975 /* WHC_PictureListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AB1BE0540A00048975 /* WHC_PictureListVC.m */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5BB1BE0540A00048975 /* WHC_PictureListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5AC1BE0540A00048975 /* WHC_PictureListVC.xib */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5BC1BE0540A00048975 /* WHC_ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AE1BE0540A00048975 /* WHC_ImageDisplayView.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5BD1BE0540A00048975 /* WHC_MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AF1BE0540A00048975 /* WHC_MenuItem.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5BF1BE0540A00048975 /* WHC_MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5B11BE0540A00048975 /* WHC_MenuView.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5C11BE0540A00048975 /* WHC_MoreMenuItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5B31BE0540A00048975 /* WHC_MoreMenuItemVC.swift */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5C71BE056CA00048975 /* UIView+WHC_AutoAdapterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5C41BE056CA00048975 /* UIView+WHC_AutoAdapterView.m */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5C81BE056CA00048975 /* UIView+WHC_ViewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5C61BE056CA00048975 /* UIView+WHC_ViewProperty.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C31C0CBC1BE1A85B008511AE /* whc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whc.gif; sourceTree = "<group>"; };
+		C31C0CBE1BE1A88E008511AE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C3D5BC7D1BE0680900690811 /* WHC_StyleThreeVCCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_StyleThreeVCCell.xib; sourceTree = "<group>"; };
 		C3F0B55D1BE052C600048975 /* WHC_CollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHC_CollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0B5601BE052C600048975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3F0B5621BE052C600048975 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C3F0B5651BE052C600048975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3F0B5621BE052C600048975 /* WHC_StyleOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHC_StyleOneVC.swift; sourceTree = "<group>"; };
 		C3F0B5671BE052C600048975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3F0B56A1BE052C600048975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3F0B56C1BE052C600048975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +72,35 @@
 		C3F0B57C1BE052C600048975 /* WHC_CollectionViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WHC_CollectionViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0B5801BE052C600048975 /* WHC_CollectionViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHC_CollectionViewDemoUITests.swift; sourceTree = "<group>"; };
 		C3F0B5821BE052C600048975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3F0B58E1BE0533C00048975 /* WHC_StyleTwoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_StyleTwoVC.swift; sourceTree = "<group>"; };
+		C3F0B58F1BE0533C00048975 /* WHC_StyleTwoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_StyleTwoVC.xib; sourceTree = "<group>"; };
+		C3F0B5921BE0535000048975 /* WHC_StyleThreeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_StyleThreeVC.swift; sourceTree = "<group>"; };
+		C3F0B5931BE0535000048975 /* WHC_StyleThreeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_StyleThreeVC.xib; sourceTree = "<group>"; };
+		C3F0B5961BE0536E00048975 /* WHC_StyleFourVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_StyleFourVC.swift; sourceTree = "<group>"; };
+		C3F0B5971BE0536E00048975 /* WHC_StyleFourVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_StyleFourVC.xib; sourceTree = "<group>"; };
+		C3F0B59A1BE0538600048975 /* WHC_StyleOneVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_StyleOneVC.xib; sourceTree = "<group>"; };
+		C3F0B5A01BE0540A00048975 /* WHC_Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_Asset.h; sourceTree = "<group>"; };
+		C3F0B5A11BE0540A00048975 /* WHC_Asset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_Asset.m; sourceTree = "<group>"; };
+		C3F0B5A21BE0540A00048975 /* WHC_PhotoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_PhotoListCell.h; sourceTree = "<group>"; };
+		C3F0B5A31BE0540A00048975 /* WHC_PhotoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_PhotoListCell.m; sourceTree = "<group>"; };
+		C3F0B5A41BE0540A00048975 /* WHC_CameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_CameraVC.h; sourceTree = "<group>"; };
+		C3F0B5A51BE0540A00048975 /* WHC_CameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_CameraVC.m; sourceTree = "<group>"; };
+		C3F0B5A61BE0540A00048975 /* WHC_CameraVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_CameraVC.xib; sourceTree = "<group>"; };
+		C3F0B5A71BE0540A00048975 /* WHC_ChoicePictureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_ChoicePictureVC.h; sourceTree = "<group>"; };
+		C3F0B5A81BE0540A00048975 /* WHC_ChoicePictureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_ChoicePictureVC.m; sourceTree = "<group>"; };
+		C3F0B5A91BE0540A00048975 /* WHC_ChoicePictureVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_ChoicePictureVC.xib; sourceTree = "<group>"; };
+		C3F0B5AA1BE0540A00048975 /* WHC_PictureListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHC_PictureListVC.h; sourceTree = "<group>"; };
+		C3F0B5AB1BE0540A00048975 /* WHC_PictureListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHC_PictureListVC.m; sourceTree = "<group>"; };
+		C3F0B5AC1BE0540A00048975 /* WHC_PictureListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_PictureListVC.xib; sourceTree = "<group>"; };
+		C3F0B5AE1BE0540A00048975 /* WHC_ImageDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_ImageDisplayView.swift; sourceTree = "<group>"; };
+		C3F0B5AF1BE0540A00048975 /* WHC_MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_MenuItem.swift; sourceTree = "<group>"; };
+		C3F0B5B11BE0540A00048975 /* WHC_MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_MenuView.swift; sourceTree = "<group>"; };
+		C3F0B5B31BE0540A00048975 /* WHC_MoreMenuItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_MoreMenuItemVC.swift; sourceTree = "<group>"; };
+		C3F0B5C31BE056CA00048975 /* UIView+WHC_AutoAdapterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WHC_AutoAdapterView.h"; sourceTree = "<group>"; };
+		C3F0B5C41BE056CA00048975 /* UIView+WHC_AutoAdapterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WHC_AutoAdapterView.m"; sourceTree = "<group>"; };
+		C3F0B5C51BE056CA00048975 /* UIView+WHC_ViewProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WHC_ViewProperty.h"; sourceTree = "<group>"; };
+		C3F0B5C61BE056CA00048975 /* UIView+WHC_ViewProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WHC_ViewProperty.m"; sourceTree = "<group>"; };
+		C3F0B5C91BE05AB800048975 /* WHC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WHC-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +128,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3B56B041BE09A8200C05306 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				C31C0CBC1BE1A85B008511AE /* whc.gif */,
+			);
+			path = gif;
+			sourceTree = "<group>";
+		};
 		C3F0B5541BE052C600048975 = {
 			isa = PBXGroup;
 			children = (
+				C31C0CBE1BE1A88E008511AE /* README.md */,
 				C3F0B55F1BE052C600048975 /* WHC_CollectionViewDemo */,
 				C3F0B5741BE052C600048975 /* WHC_CollectionViewDemoTests */,
 				C3F0B57F1BE052C600048975 /* WHC_CollectionViewDemoUITests */,
@@ -97,12 +160,22 @@
 		C3F0B55F1BE052C600048975 /* WHC_CollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C3B56B041BE09A8200C05306 /* gif */,
+				C3F0B59C1BE0540A00048975 /* WHC_Lib */,
 				C3F0B5601BE052C600048975 /* AppDelegate.swift */,
-				C3F0B5621BE052C600048975 /* ViewController.swift */,
-				C3F0B5641BE052C600048975 /* Main.storyboard */,
+				C3F0B5621BE052C600048975 /* WHC_StyleOneVC.swift */,
+				C3F0B58E1BE0533C00048975 /* WHC_StyleTwoVC.swift */,
+				C3F0B5921BE0535000048975 /* WHC_StyleThreeVC.swift */,
+				C3F0B5961BE0536E00048975 /* WHC_StyleFourVC.swift */,
+				C3F0B59A1BE0538600048975 /* WHC_StyleOneVC.xib */,
+				C3F0B58F1BE0533C00048975 /* WHC_StyleTwoVC.xib */,
+				C3F0B5931BE0535000048975 /* WHC_StyleThreeVC.xib */,
+				C3F0B5971BE0536E00048975 /* WHC_StyleFourVC.xib */,
+				C3D5BC7D1BE0680900690811 /* WHC_StyleThreeVCCell.xib */,
 				C3F0B5671BE052C600048975 /* Assets.xcassets */,
 				C3F0B5691BE052C600048975 /* LaunchScreen.storyboard */,
 				C3F0B56C1BE052C600048975 /* Info.plist */,
+				C3F0B5C91BE05AB800048975 /* WHC-Bridging-Header.h */,
 			);
 			path = WHC_CollectionViewDemo;
 			sourceTree = "<group>";
@@ -123,6 +196,74 @@
 				C3F0B5821BE052C600048975 /* Info.plist */,
 			);
 			path = WHC_CollectionViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		C3F0B59C1BE0540A00048975 /* WHC_Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0B59D1BE0540A00048975 /* OC_Lib */,
+				C3F0B5AD1BE0540A00048975 /* Swift_Lib */,
+			);
+			path = WHC_Lib;
+			sourceTree = "<group>";
+		};
+		C3F0B59D1BE0540A00048975 /* OC_Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0B5C21BE056CA00048975 /* UIUnit */,
+				C3F0B59E1BE0540A00048975 /* ChoiceImageMode */,
+			);
+			path = OC_Lib;
+			sourceTree = "<group>";
+		};
+		C3F0B59E1BE0540A00048975 /* ChoiceImageMode */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0B59F1BE0540A00048975 /* cell */,
+				C3F0B5A41BE0540A00048975 /* WHC_CameraVC.h */,
+				C3F0B5A51BE0540A00048975 /* WHC_CameraVC.m */,
+				C3F0B5A61BE0540A00048975 /* WHC_CameraVC.xib */,
+				C3F0B5A71BE0540A00048975 /* WHC_ChoicePictureVC.h */,
+				C3F0B5A81BE0540A00048975 /* WHC_ChoicePictureVC.m */,
+				C3F0B5A91BE0540A00048975 /* WHC_ChoicePictureVC.xib */,
+				C3F0B5AA1BE0540A00048975 /* WHC_PictureListVC.h */,
+				C3F0B5AB1BE0540A00048975 /* WHC_PictureListVC.m */,
+				C3F0B5AC1BE0540A00048975 /* WHC_PictureListVC.xib */,
+			);
+			path = ChoiceImageMode;
+			sourceTree = "<group>";
+		};
+		C3F0B59F1BE0540A00048975 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0B5A01BE0540A00048975 /* WHC_Asset.h */,
+				C3F0B5A11BE0540A00048975 /* WHC_Asset.m */,
+				C3F0B5A21BE0540A00048975 /* WHC_PhotoListCell.h */,
+				C3F0B5A31BE0540A00048975 /* WHC_PhotoListCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		C3F0B5AD1BE0540A00048975 /* Swift_Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0B5AE1BE0540A00048975 /* WHC_ImageDisplayView.swift */,
+				C3F0B5AF1BE0540A00048975 /* WHC_MenuItem.swift */,
+				C3F0B5B11BE0540A00048975 /* WHC_MenuView.swift */,
+				C3F0B5B31BE0540A00048975 /* WHC_MoreMenuItemVC.swift */,
+			);
+			path = Swift_Lib;
+			sourceTree = "<group>";
+		};
+		C3F0B5C21BE056CA00048975 /* UIUnit */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0B5C31BE056CA00048975 /* UIView+WHC_AutoAdapterView.h */,
+				C3F0B5C41BE056CA00048975 /* UIView+WHC_AutoAdapterView.m */,
+				C3F0B5C51BE056CA00048975 /* UIView+WHC_ViewProperty.h */,
+				C3F0B5C61BE056CA00048975 /* UIView+WHC_ViewProperty.m */,
+			);
+			path = UIUnit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +369,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F0B5951BE0535000048975 /* WHC_StyleThreeVC.xib in Resources */,
+				C3F0B5BB1BE0540A00048975 /* WHC_PictureListVC.xib in Resources */,
+				C3F0B5B91BE0540A00048975 /* WHC_ChoicePictureVC.xib in Resources */,
+				C31C0CBD1BE1A85B008511AE /* whc.gif in Resources */,
 				C3F0B56B1BE052C600048975 /* LaunchScreen.storyboard in Resources */,
+				C3F0B5991BE0536E00048975 /* WHC_StyleFourVC.xib in Resources */,
+				C3F0B5911BE0533C00048975 /* WHC_StyleTwoVC.xib in Resources */,
+				C3F0B59B1BE0538600048975 /* WHC_StyleOneVC.xib in Resources */,
+				C3D5BC7E1BE0680900690811 /* WHC_StyleThreeVCCell.xib in Resources */,
+				C3F0B5B71BE0540A00048975 /* WHC_CameraVC.xib in Resources */,
 				C3F0B5681BE052C600048975 /* Assets.xcassets in Resources */,
-				C3F0B5661BE052C600048975 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +404,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3F0B5631BE052C600048975 /* ViewController.swift in Sources */,
+				C3F0B5941BE0535000048975 /* WHC_StyleThreeVC.swift in Sources */,
+				C3F0B5631BE052C600048975 /* WHC_StyleOneVC.swift in Sources */,
+				C3F0B5BD1BE0540A00048975 /* WHC_MenuItem.swift in Sources */,
+				C3F0B5C71BE056CA00048975 /* UIView+WHC_AutoAdapterView.m in Sources */,
+				C3F0B5B51BE0540A00048975 /* WHC_PhotoListCell.m in Sources */,
+				C3F0B5C81BE056CA00048975 /* UIView+WHC_ViewProperty.m in Sources */,
+				C3F0B5C11BE0540A00048975 /* WHC_MoreMenuItemVC.swift in Sources */,
+				C3F0B5901BE0533C00048975 /* WHC_StyleTwoVC.swift in Sources */,
+				C3F0B5B61BE0540A00048975 /* WHC_CameraVC.m in Sources */,
+				C3F0B5BF1BE0540A00048975 /* WHC_MenuView.swift in Sources */,
+				C3F0B5B41BE0540A00048975 /* WHC_Asset.m in Sources */,
+				C31C0CBF1BE1A88E008511AE /* README.md in Sources */,
+				C3F0B5BA1BE0540A00048975 /* WHC_PictureListVC.m in Sources */,
+				C3F0B5B81BE0540A00048975 /* WHC_ChoicePictureVC.m in Sources */,
+				C3F0B5BC1BE0540A00048975 /* WHC_ImageDisplayView.swift in Sources */,
+				C3F0B5981BE0536E00048975 /* WHC_StyleFourVC.swift in Sources */,
 				C3F0B5611BE052C600048975 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,14 +456,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C3F0B5641BE052C600048975 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3F0B5651BE052C600048975 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C3F0B5691BE052C600048975 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -347,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -385,7 +541,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -397,9 +553,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WHC_CollectionViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---.WHC-CollectionViewDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WHC_CollectionViewDemo/WHC-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -408,9 +566,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WHC_CollectionViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "---.WHC-CollectionViewDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WHC_CollectionViewDemo/WHC-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -481,6 +641,7 @@
 				C3F0B5871BE052C600048975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F0B5881BE052C600048975 /* Build configuration list for PBXNativeTarget "WHC_CollectionViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +650,7 @@
 				C3F0B58A1BE052C600048975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3F0B58B1BE052C600048975 /* Build configuration list for PBXNativeTarget "WHC_CollectionViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +659,7 @@
 				C3F0B58D1BE052C600048975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

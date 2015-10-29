@@ -6,7 +6,31 @@
 //  Copyright © 2015年 吴海超. All rights reserved.
 //
 
+/*
+*  qq:712641411
+*  gitHub:https://github.com/netyouli
+*  csdn:http://blog.csdn.net/windwhc/article/category/3117381
+*/
+
+
 import UIKit
+
+extension UIColor {
+    /// 主题颜色
+    class func themeColor() -> UIColor{
+        return UIColor(red: 38.0 / 255.0, green: 110.0 / 255.0, blue: 239.0 / 255.0, alpha: 1.0);
+    }
+    
+    /// VC主背景颜色
+    class func themeBackgroundColor() -> UIColor{
+        return UIColor(red: 245.0 / 255.0, green: 246.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0);
+    }
+    
+    /// 线颜色
+    class func lineColor() -> UIColor{
+        return UIColor(red: 197 / 255.0, green: 199 / 255.0, blue: 200 / 255.0, alpha: 1.0);
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +40,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.mainScreen().bounds);
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent;
+        UINavigationBar.appearance().barStyle = .Black;
+        UINavigationBar.appearance().barTintColor = UIColor.themeColor();
+        UINavigationBar.appearance().translucent = true;
+        
+        let tabVC = UITabBarController();
+        let oneVC = WHC_StyleOneVC(nibName: "WHC_StyleOneVC", bundle: nil);
+        let oneNV = UINavigationController(rootViewController: oneVC);
+        oneNV.tabBarItem.title = "OneStyle";
+        oneNV.tabBarItem.image = UIImage(named: "tab");
+        
+        let twoVC = WHC_StyleTwoVC(nibName: "WHC_StyleTwoVC", bundle: nil);
+        let twoNV = UINavigationController(rootViewController: twoVC);
+        twoNV.tabBarItem.title = "TwoStyle";
+        twoNV.tabBarItem.image = UIImage(named: "tab");
+        
+        let threeVC = WHC_StyleThreeVC(nibName: "WHC_StyleThreeVC", bundle: nil);
+        let threeNV = UINavigationController(rootViewController: threeVC);
+        threeNV.tabBarItem.title = "hreeStyle";
+        threeNV.tabBarItem.image = UIImage(named: "tab");
+        
+        let fourVC = WHC_StyleFourVC(nibName: "WHC_StyleFourVC", bundle: nil);
+        let fourNV = UINavigationController(rootViewController: fourVC);
+        fourNV.tabBarItem.title = "FourStyle";
+        fourNV.tabBarItem.image = UIImage(named: "tab");
+        
+        tabVC.viewControllers = [oneNV , twoNV , threeNV , fourNV];
+        window?.rootViewController = tabVC;
+        window?.makeKeyAndVisible();
         return true
     }
 
