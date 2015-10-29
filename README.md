@@ -74,7 +74,7 @@ class  WHC_MenuViewParam{
 
 ##总体运行效果
 
-![image](https://github.com/netyouli/WHC_CollectionViewDemo/tree/master/WHC_CollectionViewDemo/gif/whc.gif)
+![image](https://github.com/netyouli/WHC_CollectionViewFramework/tree/master/WHC_CollectionViewDemo/gif/whc.gif)
 
 ####运行效果OneStyle调用方式代码如下：
 ```objective-c
