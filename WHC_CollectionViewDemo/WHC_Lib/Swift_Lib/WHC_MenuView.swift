@@ -174,7 +174,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
     /// 是否是更多界面
     var isMoreMenuItem = false;
     /// 构建视图菜单配置参数
-    var menuViewParam: WHC_MenuViewParam!{
+    private var menuViewParam: WHC_MenuViewParam!{
         willSet{
             if self.menuViewParam == nil {
                 self.initData();
@@ -710,6 +710,11 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                 if !self.moveMenuItem.insertMark {
                     self.scrollView.bringSubviewToFront(self.moveMenuItem);
                     self.moveMenuItem.setLongPressBackgroundColor();
+                    for menuItem in self.menuItems {
+                        if menuItem != self.moveMenuItem {
+                            menuItem.resetBackgroundColor();
+                        }
+                    }
                     if self.menuViewParam.canAdd {
                         self.moveMenuItem.addInsertButton();
                     }else if self.menuViewParam.canDelete ||
@@ -892,6 +897,14 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
     //MARK: - WHC_MenuItemDelegate
     
     func WHCMenuItemClick(item: WHC_MenuItem , title: String , index: Int){
+        if self.canMoveAnimation {
+            return;
+        }
+        for menuItem in self.menuItems {
+            if menuItem !== item && menuItem.pressState {
+                return;
+            }
+        }
         if self.menuViewParam.isDynamicInsertMenuItem {
             if item.insertMark {
                 self.delegate?.WHCMenuViewClickInsertItem?();
@@ -951,6 +964,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                         if self.menuItems.count > 0 {
                             for index in 0...self.menuItems.count - 1 {
                                 let menuItem = self.menuItems[index];
+                                self.scrollView.bringSubviewToFront(menuItem);
                                 menuItem.index = index;
                                 self.menuItemPoints.append(menuItem.center);
                             }
@@ -998,6 +1012,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                         if itemIndex < self.menuItems.count - 1 {
                             for index in itemIndex + 1 ... self.menuItems.count - 1 {
                                 let nextMenuItem = self.menuItems[index];
+                                self.scrollView.bringSubviewToFront(nextMenuItem);
                                 let newNextMenuItemCenter = self.menuItemPoints[index - 1];
                                 nextMenuItem.center = newNextMenuItemCenter;
                             }
@@ -1045,6 +1060,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                             self.menuItemPoints.removeAll();
                             for index in 0...self.menuItems.count - 1 {
                                 let menuItem = self.menuItems[index];
+                                self.scrollView.bringSubviewToFront(menuItem);
                                 menuItem.index = index;
                                 self.menuItemPoints.append(menuItem.center);
                             }

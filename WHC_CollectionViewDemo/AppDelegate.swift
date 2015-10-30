@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let threeVC = WHC_StyleThreeVC(nibName: "WHC_StyleThreeVC", bundle: nil);
         let threeNV = UINavigationController(rootViewController: threeVC);
-        threeNV.tabBarItem.title = "hreeStyle";
+        threeNV.tabBarItem.title = "ThreeStyle";
         threeNV.tabBarItem.image = UIImage(named: "tab");
         
         let fourVC = WHC_StyleFourVC(nibName: "WHC_StyleFourVC", bundle: nil);

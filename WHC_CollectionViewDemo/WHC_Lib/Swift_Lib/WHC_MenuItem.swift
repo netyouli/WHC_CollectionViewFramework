@@ -108,6 +108,8 @@ class WHC_MenuItem: UIView {
     var selectedBackgroundColor: UIColor = UIColor.clearColor();
     /// 正常背景颜色
     var nomarlBackgroundColor: UIColor = UIColor.clearColor();
+    /// 按钮按下状态
+    var pressState = false;
     /// 设置标题
     var title: String = ""{
         willSet{
@@ -251,7 +253,8 @@ class WHC_MenuItem: UIView {
     
     /// 移除删除按钮
     private func removeDeleteButton(){
-        if self.deleteButton != nil {
+        if self.deleteButton != nil &&
+            self.subviews.contains(self.deleteButton) {
             UIView.animateWithDuration(kWHCDeleteDeleteButtonAnimationTime,
                 animations: { () -> Void in
                     self.deleteButton.transform = CGAffineTransformMakeScale(0.2, 0.2);
@@ -264,6 +267,7 @@ class WHC_MenuItem: UIView {
     
     /// 还原尺寸
     func resetRect(center: CGPoint!){
+        self.pressState = false;
         UIView.animateWithDuration(kWHCDeleteDeleteButtonAnimationTime) { () -> Void in
             if center != nil {
                 self.center = center;
@@ -275,6 +279,7 @@ class WHC_MenuItem: UIView {
     /// 恢复背景颜色
     func resetBackgroundColor(){
         self.backgroundColor = self.nomarlBackgroundColor;
+        self.removeDeleteButton();
     }
     
     /// 设置着色背景色
@@ -288,17 +293,19 @@ class WHC_MenuItem: UIView {
     //MARK: - 单击按钮
     
     func clickUp(sender: UIButton){
+        
         if self.deleteButton != nil &&
             self.subviews.contains(self.deleteButton){
                 self.resetBackgroundColor();
-                self.removeDeleteButton();
         }else {
             self.backgroundColor = self.nomarlBackgroundColor;
             self.delegate?.WHCMenuItemClick(self, title: self.title, index: self.index);
         }
+        self.pressState = false;
     }
     
     func clickDown(sender: UIButton){
+        self.pressState = true;
         guard self.deleteButton != nil &&
             self.subviews.contains(self.deleteButton) else {
 //                self.nomarlBackgroundColor = self.backgroundColor!;
