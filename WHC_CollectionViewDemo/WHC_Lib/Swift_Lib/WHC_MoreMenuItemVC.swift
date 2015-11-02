@@ -61,8 +61,8 @@ class WHC_MoreMenuItemVC: UIViewController{
         menuViewParam.canAdd = true;
         menuViewParam.canSort = true;
         menuViewParam.cacheWHCMenuKey = self.cacheWHCMenuKey;
+        menuViewParam.isMoreMenuItem = true;
         self.menuView = WHC_MenuView(frame: UIScreen.mainScreen().bounds, menuViewParam: menuViewParam);
-        self.menuView.isMoreMenuItem = true;
         self.view.addSubview(self.menuView);
     }
 

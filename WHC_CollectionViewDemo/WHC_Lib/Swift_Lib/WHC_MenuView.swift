@@ -93,6 +93,8 @@ class  WHC_MenuViewParam{
     var insertMenuItemImageName: String!;
     /// 是否自动拉伸菜单高度
     var autoStretchHeight = false;
+    /// 是否是更多界面
+    var isMoreMenuItem = false;
     /// 获取默认视图菜单配置参数
     class func getWHCMenuViewDefaultParam(titles
                                titles: [String]! ,
@@ -169,10 +171,10 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
     private var dragOri: WHC_DragOrientation!;
     /// 是否继续执行偏移动画
     private var canMoveAnimation = false;
+    /// 是否进行了排序
+    private var isSorted = false;
     /// 菜单代理
     var delegate: WHC_MenuViewDelegate?;
-    /// 是否是更多界面
-    var isMoreMenuItem = false;
     /// 构建视图菜单配置参数
     private var menuViewParam: WHC_MenuViewParam!{
         willSet{
@@ -208,10 +210,19 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                     let object = us.objectForKey(self.menuViewParam.cacheWHCMenuKey);
                     if object != nil {
                         let cacheInfoDict: NSDictionary = object as! NSDictionary;
-                        let titles: [String] = cacheInfoDict[kWHCTitlesKey] as! [String];
-                        let imageNames: [String] = cacheInfoDict[kWHCImageNamesKey] as! [String];
-                        let deleteTitles: [String] = cacheInfoDict[kWHCDeleteTitlesKey] as! [String];
-                        let deleteImageNames: [String] = cacheInfoDict[kWHCDeleteImageNamesKey] as! [String];
+                        var titles: [String]!;
+                        var imageNames: [String]!;
+                        var deleteTitles = [String]();
+                        var deleteImageNames = [String]();
+                        if self.menuViewParam.isMoreMenuItem {
+                            titles = cacheInfoDict[kWHCDeleteTitlesKey] as! [String];
+                            imageNames = cacheInfoDict[kWHCDeleteImageNamesKey] as! [String];
+                        }else {
+                            titles = cacheInfoDict[kWHCTitlesKey] as! [String];
+                            imageNames = cacheInfoDict[kWHCImageNamesKey] as! [String];
+                            deleteTitles = cacheInfoDict[kWHCDeleteTitlesKey] as! [String];
+                            deleteImageNames = cacheInfoDict[kWHCDeleteImageNamesKey] as! [String];
+                        }
                         var reset = false;
                         if titles.count + deleteTitles.count == self.menuViewParam.segmentPartTitles.count {
                             for (_ , title) in self.menuViewParam.segmentPartTitles.enumerate() {
@@ -375,8 +386,23 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
     
     /// 创建网格公共模块
     private func createGridViewModel(rowCount: Int , sumCount: Int, page: Int, pageCount: Int){
-        for row in 0...rowCount - 1 {
-            for index in 0...self.menuViewParam.column - 1 {
+        self.createGridViewModel(rowCount,
+                                sumCount: sumCount,
+                                page: page,
+                                pageCount: pageCount,
+                                currentRow: 0,
+                                currentColumn: 0);
+    }
+    
+    /// 创建网格公共模块
+    private func createGridViewModel(rowCount: Int ,
+                                    sumCount: Int,
+                                    page: Int,
+                                    pageCount: Int ,
+                                    currentRow: Int ,
+                                    var currentColumn: Int){
+        for row in currentRow...rowCount - 1 {
+            for index in currentColumn...self.menuViewParam.column - 1 {
                 let currentIndex = row * self.menuViewParam.column + index + page * pageCount;
                 if currentIndex < sumCount {
                     var imageName = "";
@@ -400,6 +426,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                     self.scrollView.addSubview(menuItem);
                     self.menuItemPoints.append(menuItem.center);
                 }
+                currentColumn = 0;
             }
         }
 
@@ -449,16 +476,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                     self.scrollView.addSubview(columnLine);
                 }
             }
-            var contentHeight = CGFloat(rowCount) * menuItemSize;
-            if self.menuViewParam.isGridShow {
-                contentHeight += CGFloat(rowCount) * lineWidth + (self.menuViewParam.isShowTopLine ? self.lineWidth : 0);
-            }
-            if self.menuViewParam.autoStretchHeight {
-                self.setHeight(contentHeight);
-                self.scrollView.setHeight(contentHeight);
-            }else {
-                self.scrollView.contentSize = CGSizeMake(self.width(), contentHeight);
-            }
+            self.dynamicCalcSelfHeight();
             break;
         case .Horizontal:
             break;
@@ -490,6 +508,22 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
             }
         }
         return menuItem;
+    }
+    
+    /// 动态计算高度
+    private func dynamicCalcSelfHeight() {
+        let sumCount = self.menuItems.count;
+        let rowCount = sumCount / self.menuViewParam.column + (sumCount % self.menuViewParam.column == 0 ? 0 : 1);
+        var contentHeight = CGFloat(rowCount) * menuItemSize;
+        if self.menuViewParam.isGridShow {
+            contentHeight += CGFloat(rowCount) * lineWidth + (self.menuViewParam.isShowTopLine ? self.lineWidth : 0);
+        }
+        if self.menuViewParam.autoStretchHeight {
+            self.setHeight(contentHeight);
+            self.scrollView.setHeight(contentHeight);
+        }else {
+            self.scrollView.contentSize = CGSizeMake(self.width(), contentHeight);
+        }
     }
     //MARK: - 类方法
     
@@ -534,18 +568,58 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
     
     /// 更新图片集合
     func update(imagesName imagesName: [String] , titles: [String]!){
-        if self.menuItemImageNames != nil {
-            self.menuItemImageNames.removeAll();
+    
+        if imagesName.count == self.menuItems.count {
+            for (i , menuItem) in self.menuItems.enumerate() {
+                menuItem.imageName = imagesName[i];
+            }
+            self.dynamicCalcSelfHeight();
+        }else if imagesName.count > self.menuItems.count {
+            if self.menuItemImageNames != nil {
+                self.menuItemImageNames.removeAll();
+            }
+            if self.menuItemTitles != nil {
+                self.menuItemTitles.removeAll();
+            }
+            if titles != nil {
+                self.menuItemTitles = titles;
+            }
+            self.menuItemImageNames = imagesName;
+            if self.menuItems.count > 0 {
+                for (i , menuItem) in self.menuItems.enumerate() {
+                    menuItem.imageName = imagesName[i];
+                }
+                let sumCount = imagesName.count;
+                let rowCount = sumCount / self.menuViewParam.column + (sumCount % self.menuViewParam.column == 0 ? 0 : 1);
+                let currentIndex = self.menuItems.count;
+                let currentRow = currentIndex / self.menuViewParam.column + (currentIndex % self.menuViewParam.column == 0 ? 0 : 1) - 1;
+                let currentColumn = currentIndex % self.menuViewParam.column;
+                self.createGridViewModel(rowCount,
+                                        sumCount: sumCount,
+                                        page: 0, pageCount: 0,
+                                        currentRow: currentRow,
+                                        currentColumn: currentColumn);
+                self.dynamicCalcSelfHeight();
+            }else{
+                self.createGridViewLayout();
+            }
+        }else {
+            if self.menuItems.count > 0 {
+                let count = self.menuItems.count;
+                for i in imagesName.count ... count - 1 {
+                    self.menuItems[i].removeFromSuperview();
+                }
+                self.menuItems.removeRange(Range(start: imagesName.count , end: count));
+                for (i , menuItem) in self.menuItems.enumerate() {
+                    menuItem.imageName = imagesName[i];
+                }
+                self.dynamicCalcSelfHeight();
+            }else{
+                self.createGridViewLayout();
+            }
         }
-        if self.menuItemTitles != nil {
-            self.menuItemTitles.removeAll();
-        }
-        if titles != nil {
-            self.menuItemTitles = titles;
-        }
-        self.menuItemImageNames = imagesName;
-        self.createGridViewLayout();
     }
+    
     
     /// 插入图片菜单集合
     func insertMenuItemsImage(images: [UIImage]){
@@ -561,8 +635,10 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
     /// 处理屏幕时钟
     func handleDisplayLink(){
         if self.scrollView.contentOffset.y >= -self.initEdge.top {
-            self.scrollView.setContentOffset(CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y - CGFloat(self.moveIncrement)), animated: false);
-            self.moveMenuItem.center = CGPointMake(self.moveMenuItem.centerX(), self.moveMenuItem.centerY() - CGFloat(self.moveIncrement));
+            self.scrollView.setContentOffset(CGPointMake(self.scrollView.contentOffset.x,
+                self.scrollView.contentOffset.y - CGFloat(self.moveIncrement)), animated: false);
+            self.moveMenuItem.center = CGPointMake(self.moveMenuItem.centerX(),
+                self.moveMenuItem.centerY() - CGFloat(self.moveIncrement));
             switch self.dragOri! {
             case .Up:
                 if self.scrollView.contentOffset.y < -self.initEdge.top {
@@ -595,18 +671,20 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
         return self.deletedMenuItemImageNames;
     }
     
-    /// 保存插入后菜单项的状态
+    /// 保存删除后菜单项的状态
     func saveInsertedMenuItemState(){
-        
         let us = NSUserDefaults.standardUserDefaults();
         let object = us.objectForKey(self.menuViewParam.cacheWHCMenuKey);
         if object != nil {
-            var titles: [String] = self.menuItemTitles;
+            var titles = self.menuItemTitles;
+            var imageNames = self.menuItemImageNames;
             if titles.contains(kMoreTxt) {
-                titles.removeAtIndex(titles.count - 1);
+                titles.removeAtIndex(titles.indexOf(kMoreTxt)!);
+                imageNames.removeAtIndex(imageNames.indexOf("")!);
             }
-            us.setObject([kWHCTitlesKey: titles ,
-                kWHCImageNamesKey: self.menuItemImageNames,
+            us.setObject([
+                kWHCTitlesKey: titles ,
+                kWHCImageNamesKey: imageNames,
                 kWHCDeleteImageNamesKey: self.deletedMenuItemImageNames,
                 kWHCDeleteTitlesKey: self.deletedMenuItemTitles],
                 forKey: self.menuViewParam.cacheWHCMenuKey)
@@ -625,7 +703,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
         let us = NSUserDefaults.standardUserDefaults();
         let object = us.objectForKey(self.menuViewParam.cacheWHCMenuKey);
         if object != nil {
-            if self.isMoreMenuItem {
+            if self.menuViewParam.isMoreMenuItem {
                 let cacheMenuDict: NSDictionary = object as! NSDictionary;
                 let cacheMenuMutableDict: NSMutableDictionary = cacheMenuDict.mutableCopy() as! NSMutableDictionary;
                 cacheMenuMutableDict.setObject(self.menuItemTitles, forKey: kWHCDeleteTitlesKey)
@@ -695,6 +773,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
             if self.initEdge == nil {
                 self.initEdge = self.scrollView.contentInset;
             }
+            self.isSorted = false;
             self.currentMovePoint = CGPointZero;
             self.canMoveMenuItem = false;
             self.moveMenuItem = nil;
@@ -798,7 +877,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
             self.isTouchEnd = true;
             
             self.moveMenuItem?.resetRect(self.startPoint);
-            if self.menuViewParam.canSort {
+            if self.menuViewParam.canSort && self.isSorted {
                 self.saveEditedMenuItemState();
             }
         default:
@@ -809,6 +888,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
     private func sortWHCMenuView(movePoint: CGPoint , isSorted: ((Bool) -> Void)?){
         let currentIndex = self.getMenuItemIndex(movePoint);
         if currentIndex > -1 {
+            self.isSorted = true;
             self.isAnimationMoving = true;
             UIView.animateWithDuration(kWHCAnimationTime / 2.0,
                 animations: { () -> Void in

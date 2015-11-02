@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "WHC_MenuView.WHCMenuItemClick(WHC_MenuItem, title : String, index : Int) -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.deletedMenuItemImageNames">
+            </PersistentString>
+            <PersistentString
+               value = "self.deletedMenuItemTitles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WHC_ImageDisplayView.(layoutUI in _6FE149305B5020FFC91382CEBD423407)() -&gt; ():WHC_ImageDisplayView.swift">
          <PersistentStrings>
             <PersistentString
@@ -13,6 +24,30 @@
             </PersistentString>
             <PersistentString
                value = "self.currentImageView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WHC_MenuView.(initData in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.menuViewParam">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WHC_MenuView.(layoutUI in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.menuItemTitles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WHC_MenuView.saveInsertedMenuItemState() -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.deletedMenuItemTitles">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

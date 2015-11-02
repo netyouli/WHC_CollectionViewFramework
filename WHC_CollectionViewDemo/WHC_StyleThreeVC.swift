@@ -91,6 +91,8 @@ class WHC_StyleThreeVC: UIViewController {
     @IBOutlet  var tableView:UITableView!;
     
     private    let imagesName = [["png3","png4","png5","png1","png2","png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2","png3","png4","png5","png1","png2","png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2","png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"]];
+    
+    private    var currentCell: WHC_StyleThreeVCCell!;
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
     }
@@ -123,9 +125,9 @@ class WHC_StyleThreeVC: UIViewController {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
-        let cell: WHC_StyleThreeVCCell? = tableView.dequeueReusableCellWithIdentifier(kCellName) as? WHC_StyleThreeVCCell;
-        cell?.displayCell(self.imagesName[indexPath.row], otherParam: nil);
-        return cell!.height();
+        self.currentCell = tableView.dequeueReusableCellWithIdentifier(kCellName) as? WHC_StyleThreeVCCell;
+        self.currentCell.displayCell(self.imagesName[indexPath.row], otherParam: nil);
+        return self.currentCell.height();
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
@@ -138,9 +140,9 @@ class WHC_StyleThreeVC: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell: WHC_StyleThreeVCCell? = tableView.dequeueReusableCellWithIdentifier(kCellName) as? WHC_StyleThreeVCCell;
-        cell?.displayCell(self.imagesName[indexPath.row], otherParam: nil);
-        return cell!;
+        self.currentCell = tableView.dequeueReusableCellWithIdentifier(kCellName) as? WHC_StyleThreeVCCell;
+        self.currentCell.displayCell(self.imagesName[indexPath.row], otherParam: nil);
+        return self.currentCell;
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
