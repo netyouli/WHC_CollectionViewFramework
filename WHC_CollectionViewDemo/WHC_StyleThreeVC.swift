@@ -84,12 +84,12 @@ class WHC_StyleThreeVCCell:UITableViewCell , WHC_MenuViewDelegate{
 }
 
 
-class WHC_StyleThreeVC: UIViewController {
+class WHC_StyleThreeVC: UIViewController ,WHCRefreshDelegate{
     /// cell名称
     private    let kCellName = "WHC_StyleThreeVCCell";
     /// 列表
     @IBOutlet  var tableView:UITableView!;
-    
+    private    var count = 2;
     private    let imagesName = [["png3","png4","png5","png1","png2","png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2","png3","png4","png5","png1","png2","png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2","png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"],["png3","png4","png5","png1","png2"]];
     
     private    var currentCell: WHC_StyleThreeVCCell!;
@@ -106,18 +106,53 @@ class WHC_StyleThreeVC: UIViewController {
         self.navigationItem.title = "WHC-集合菜单样式三";
         self.tableView.backgroundColor = UIColor.themeBackgroundColor();
         self.tableView.registerNib(UINib(nibName: kCellName, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: kCellName);
+        self.tableView.whc_setRefreshStyle(refreshStyle: .AllStyle, tableViewHeight: self.view.screenHeight(), delegate: self);
+//        self.tableView.whc_setRefreshStyle(refreshStyle: .AllStyle, refreshAnimationType: WHCRefreshAnimationType.CrossErasure, tableViewHeight: self.view.screenHeight(), delegate: self);
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        self.tableView.whc_startRefresh();
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
+    func WHCUpRefresh(){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
+            [unowned self] () -> Void in
+            
+            self.count += 1;
+            if self.count > self.imagesName.count {
+                self.count = self.imagesName.count;
+                self.tableView.whc_setFinishedRefresh(style: .UpStyle , prompt: "所有已经加载完");
+            }else {
+                self.tableView.whc_setFinishedRefresh(style: .UpStyle);
+            }
+            self.tableView.reloadData();
+        })
+    }
+    func WHCDownRefresh(){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
+            [unowned self] () -> Void in
+            self.count -= 1;
+            if self.count < 1 {
+                self.count = 1;
+                self.tableView.whc_setFinishedRefresh(style: .DownStyle , prompt: "已经到第一页");
+            }else {
+               self.tableView.whc_setFinishedRefresh(style: .DownStyle);
+            }
+            self.tableView.reloadData();
+        })
+    }
+    
     //MARK: - 列表代理
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return imagesName.count;
+        return count;//imagesName.count;
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{

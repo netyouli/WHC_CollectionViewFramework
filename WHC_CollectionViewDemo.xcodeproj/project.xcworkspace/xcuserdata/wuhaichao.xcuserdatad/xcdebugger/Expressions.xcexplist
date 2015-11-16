@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "WHC_MenuView.(layoutUI in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.menuItemTitles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WHC_MenuView.(initData in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.menuViewParam">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WHC_MenuView.WHCMenuItemClick(WHC_MenuItem, title : String, index : Int) -&gt; ():WHC_MenuView.swift">
          <PersistentStrings>
             <PersistentString
@@ -28,18 +44,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "WHC_MenuView.(initData in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
+         contextName = "UIScrollView.(setInitEdgeWithView in _415326965BBC634310F45D26C7B19A42)(WHCRefreshView!) -&gt; ():WHC_Refresh.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.menuViewParam">
+               value = "refreshView.refreshState">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "WHC_MenuView.(layoutUI in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
+         contextName = "WHCRefreshView.startRefresh() -&gt; ():WHC_Refresh.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.menuItemTitles">
+               value = "refreshState">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
