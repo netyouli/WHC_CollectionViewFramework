@@ -11,6 +11,22 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "WHC_MenuView.(createGridViewLayout in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.menuItemImageNames">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "WHC_MenuView.WHCMenuItemClickDelete(WHC_MenuItem) -&gt; ():WHC_MenuView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.menuViewParam.canAdd">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WHC_MenuView.(initData in _49CDEA3AE2825729890E7397A2C2A709)() -&gt; ():WHC_MenuView.swift">
          <PersistentStrings>
             <PersistentString

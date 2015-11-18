@@ -78,7 +78,7 @@ class  WHC_MenuViewParam{
     /// 是否能够删除
     var canDelete = true;
     /// 是否能够添加
-    var canAdd = false;
+    var canAdd = true;
     /// 是否显示页标签
     var canShowPageCtl = true;
     /// 线宽
@@ -212,19 +212,25 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                         let cacheInfoDict: NSDictionary = object as! NSDictionary;
                         var titles: [String]!;
                         var imageNames: [String]!;
-                        var deleteTitles = [String]();
-                        var deleteImageNames = [String]();
+                        var deleteTitles: [String]!;
+                        var deleteImageNames: [String]!;
                         if self.menuViewParam.isMoreMenuItem {
-                            titles = cacheInfoDict[kWHCDeleteTitlesKey] as! [String];
-                            imageNames = cacheInfoDict[kWHCDeleteImageNamesKey] as! [String];
+                            titles = cacheInfoDict[kWHCDeleteTitlesKey] as? [String];
+                            imageNames = cacheInfoDict[kWHCDeleteImageNamesKey] as? [String];
                         }else {
-                            titles = cacheInfoDict[kWHCTitlesKey] as! [String];
-                            imageNames = cacheInfoDict[kWHCImageNamesKey] as! [String];
-                            deleteTitles = cacheInfoDict[kWHCDeleteTitlesKey] as! [String];
-                            deleteImageNames = cacheInfoDict[kWHCDeleteImageNamesKey] as! [String];
+                            titles = cacheInfoDict[kWHCTitlesKey] as? [String];
+                            imageNames = cacheInfoDict[kWHCImageNamesKey] as? [String];
+                            deleteTitles = cacheInfoDict[kWHCDeleteTitlesKey] as? [String];
+                            deleteImageNames = cacheInfoDict[kWHCDeleteImageNamesKey] as? [String];
                         }
                         var reset = false;
-                        if titles.count + deleteTitles.count == self.menuViewParam.segmentPartTitles.count {
+                        if deleteTitles == nil ||
+                            deleteImageNames == nil {
+                            deleteTitles = [String]();
+                            deleteImageNames = [String]();
+                        }
+                        if titles != nil &&
+                            (titles.count + deleteTitles.count == self.menuViewParam.segmentPartTitles.count) {
                             for (_ , title) in self.menuViewParam.segmentPartTitles.enumerate() {
                                 if !titles.contains(title) &&
                                     !deleteTitles.contains(title) {
@@ -257,6 +263,10 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                         self.menuItemImageNames = self.menuViewParam.segmentPartImageNames;
                     }
                     us.synchronize();
+                }else {
+                    self.cleanMenuItemCache();
+                    self.menuItemTitles = self.menuViewParam.segmentPartTitles;
+                    self.menuItemImageNames = self.menuViewParam.segmentPartImageNames;
                 }
             }else{
                 self.menuItemTitles = self.menuViewParam.segmentPartTitles;
@@ -277,7 +287,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
         self.scrollView.showsVerticalScrollIndicator = false;
         if self.menuViewParam != nil {
             if !self.menuViewParam.isDynamicInsertMenuItem {
-                if self.menuViewParam.canDelete {
+                if self.menuViewParam.canAdd {
                     self.menuItemTitles.append(kMoreTxt);
                     self.menuItemImageNames.append("");
                 }
@@ -678,7 +688,7 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
         if object != nil {
             var titles = self.menuItemTitles;
             var imageNames = self.menuItemImageNames;
-            if titles.contains(kMoreTxt) {
+            if titles.contains(kMoreTxt) && self.menuViewParam.canAdd {
                 titles.removeAtIndex(titles.indexOf(kMoreTxt)!);
                 imageNames.removeAtIndex(imageNames.indexOf("")!);
             }
@@ -714,6 +724,15 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
             }else {
                 self.saveInsertedMenuItemState();
             }
+        }
+    }
+    
+    /// 清除缓存
+    func cleanMenuItemCache() {
+        let us = NSUserDefaults.standardUserDefaults();
+        if self.menuViewParam.cacheWHCMenuKey != nil {
+            us.setObject([String : String](), forKey: self.menuViewParam.cacheWHCMenuKey);
+            us.synchronize();
         }
     }
     
@@ -794,7 +813,8 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
                             menuItem.resetBackgroundColor();
                         }
                     }
-                    if self.menuViewParam.canAdd {
+                    if self.menuViewParam.canAdd &&
+                        !self.menuViewParam.canDelete {
                         self.moveMenuItem.addInsertButton();
                     }else if self.menuViewParam.canDelete ||
                         self.menuViewParam.isDynamicInsertMenuItem {
@@ -1114,44 +1134,51 @@ class WHC_MenuView: UIView ,WHC_MenuItemDelegate , WHC_MoreMenuItemVCDelegate , 
             }
 
         }else {
-            let moreItemCenterPoint = self.getMenuItem(kMoreTxt).center;
-            let transform = CGAffineTransformMakeTranslation(moreItemCenterPoint.x - itemCenterPoint.x,
-                moreItemCenterPoint.y - itemCenterPoint.y);
-            UIView.animateWithDuration(kWHCAnimationTime, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-                item.transform = CGAffineTransformScale(transform, 0.1, 0.1);
-                }, completion: { (finish) -> Void in
-                    self.currentDeleteMenuItem.hidden = true;
-                    let itemIndex = self.currentDeleteMenuItem.index;
-                    self.deletedMenuItemTitles.append(self.currentDeleteMenuItem.title);
-                    self.deletedMenuItemImageNames.append(self.currentDeleteMenuItem.imageName);
-                    self.currentDeleteMenuItem.removeFromSuperview();
-                    let isDeleteRow = ((self.menuItems.count % self.menuViewParam.column != 1) ? false : true);
-                    self.menuItemImageNames.removeAtIndex(itemIndex);
-                    self.menuItemTitles.removeAtIndex(itemIndex);
-                    self.isAnimationMoving = true;
-                    UIView.animateWithDuration(self.kWHCAnimationTime, animations: { () -> Void in
-                        for index in itemIndex + 1 ... self.menuItems.count - 1 {
-                            let nextMenuItem = self.menuItems[index];
-                            let newNextMenuItemCenter = self.menuItemPoints[index - 1];
-                            nextMenuItem.center = newNextMenuItemCenter;
+            if self.menuViewParam.canAdd {
+                let moreItemCenterPoint = self.getMenuItem(kMoreTxt).center;
+                let transform = CGAffineTransformMakeTranslation(moreItemCenterPoint.x - itemCenterPoint.x,
+                    moreItemCenterPoint.y - itemCenterPoint.y);
+                UIView.animateWithDuration(kWHCAnimationTime, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                    item.transform = CGAffineTransformScale(transform, 0.1, 0.1);
+                    }, completion: { (finish) -> Void in
+                        self.currentDeleteMenuItem.hidden = true;
+                        let itemIndex = self.currentDeleteMenuItem.index;
+                        self.deletedMenuItemTitles.append(self.currentDeleteMenuItem.title);
+                        self.deletedMenuItemImageNames.append(self.currentDeleteMenuItem.imageName);
+                        self.currentDeleteMenuItem.removeFromSuperview();
+                        let isDeleteRow = ((self.menuItems.count % self.menuViewParam.column != 1) ? false : true);
+                        self.menuItemImageNames.removeAtIndex(itemIndex);
+                        self.menuItemTitles.removeAtIndex(itemIndex);
+                        self.isAnimationMoving = true;
+                        UIView.animateWithDuration(self.kWHCAnimationTime, animations: { () -> Void in
+                            for index in itemIndex + 1 ... self.menuItems.count - 1 {
+                                let nextMenuItem = self.menuItems[index];
+                                let newNextMenuItemCenter = self.menuItemPoints[index - 1];
+                                nextMenuItem.center = newNextMenuItemCenter;
+                            }
+                            }) { (finish) -> Void in
+                                self.menuItems.removeAtIndex(itemIndex);
+                                self.menuItemPoints.removeAll();
+                                for index in 0...self.menuItems.count - 1 {
+                                    let menuItem = self.menuItems[index];
+                                    self.scrollView.bringSubviewToFront(menuItem);
+                                    menuItem.index = index;
+                                    self.menuItemPoints.append(menuItem.center);
+                                }
+                                self.isAnimationMoving = false;
+                                self.saveEditedMenuItemState();
+                                if isDeleteRow {
+                                    self.createGridLineLayout();
+                                }
                         }
-                        }) { (finish) -> Void in
-                            self.menuItems.removeAtIndex(itemIndex);
-                            self.menuItemPoints.removeAll();
-                            for index in 0...self.menuItems.count - 1 {
-                                let menuItem = self.menuItems[index];
-                                self.scrollView.bringSubviewToFront(menuItem);
-                                menuItem.index = index;
-                                self.menuItemPoints.append(menuItem.center);
-                            }
-                            self.isAnimationMoving = false;
-                            self.saveEditedMenuItemState();
-                            if isDeleteRow {
-                                self.createGridLineLayout();
-                            }
-                    }
 
-            })
+                })
+            }else {
+                UIAlertView(title: "无法删除请设置canAdd = true",
+                    message: nil,
+                    delegate: nil,
+                    cancelButtonTitle: "确定").show();
+            }
         }
     }
     
