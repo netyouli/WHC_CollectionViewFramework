@@ -51,6 +51,7 @@ class WHC_StyleThreeVCCell:UITableViewCell , WHC_MenuViewDelegate{
                 let menuParam = WHC_MenuViewParam.getWHCMenuViewDefaultParam(titles: nil, imageNames: nil , cacheWHCMenuKey: "");
                 menuParam.canDelete = false;          // 不能删除
                 menuParam.canSort = false;            // 不能排序
+                menuParam.canAdd = false;             // 不能添加
                 menuParam.isGridShow = false;         // 没有网格
                 menuParam.autoStretchHeight = true;   // 自动拉伸菜单自身
                 menuParam.pading = 1;                 // 间隙
@@ -106,7 +107,7 @@ class WHC_StyleThreeVC: UIViewController ,WHCRefreshDelegate{
         self.navigationItem.title = "WHC-集合菜单样式三";
         self.tableView.backgroundColor = UIColor.themeBackgroundColor();
         self.tableView.registerNib(UINib(nibName: kCellName, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: kCellName);
-        self.tableView.whc_setRefreshStyle(refreshStyle: .AllStyle, tableViewHeight: self.view.screenHeight(), delegate: self);
+        self.tableView.whc_setRefreshStyle(refreshStyle: .DownStyle, tableViewHeight: self.view.screenHeight(), delegate: self);
 //        self.tableView.whc_setRefreshStyle(refreshStyle: .AllStyle, refreshAnimationType: WHCRefreshAnimationType.CrossErasure, tableViewHeight: self.view.screenHeight(), delegate: self);
         // Do any additional setup after loading the view.
     }

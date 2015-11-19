@@ -19,6 +19,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "WHCRefreshView.updateProgressValue(CGFloat) -&gt; ():WHC_Refresh.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "refreshState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "WHC_MenuView.WHCMenuItemClickDelete(WHC_MenuItem) -&gt; ():WHC_MenuView.swift">
          <PersistentStrings>
             <PersistentString
