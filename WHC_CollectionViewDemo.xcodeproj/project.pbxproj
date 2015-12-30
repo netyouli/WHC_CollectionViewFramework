@@ -7,38 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C31C0CBD1BE1A85B008511AE /* whc.gif in Resources */ = {isa = PBXBuildFile; fileRef = C31C0CBC1BE1A85B008511AE /* whc.gif */; settings = {ASSET_TAGS = (); }; };
-		C31C0CBF1BE1A88E008511AE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C31C0CBE1BE1A88E008511AE /* README.md */; settings = {ASSET_TAGS = (); }; };
-		C3D5BC7E1BE0680900690811 /* WHC_StyleThreeVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D5BC7D1BE0680900690811 /* WHC_StyleThreeVCCell.xib */; settings = {ASSET_TAGS = (); }; };
-		C3EB970C1BF5A3ED0058E655 /* WHC_Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB970B1BF5A3ED0058E655 /* WHC_Refresh.swift */; settings = {ASSET_TAGS = (); }; };
+		C31C0CBD1BE1A85B008511AE /* whc.gif in Resources */ = {isa = PBXBuildFile; fileRef = C31C0CBC1BE1A85B008511AE /* whc.gif */; };
+		C31C0CBF1BE1A88E008511AE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C31C0CBE1BE1A88E008511AE /* README.md */; };
+		C3617C931C3373EE00FCEC90 /* WHC_Refresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3617C921C3373EE00FCEC90 /* WHC_Refresh.swift */; };
+		C3D5BC7E1BE0680900690811 /* WHC_StyleThreeVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D5BC7D1BE0680900690811 /* WHC_StyleThreeVCCell.xib */; };
 		C3F0B5611BE052C600048975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5601BE052C600048975 /* AppDelegate.swift */; };
 		C3F0B5631BE052C600048975 /* WHC_StyleOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5621BE052C600048975 /* WHC_StyleOneVC.swift */; };
 		C3F0B5681BE052C600048975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5671BE052C600048975 /* Assets.xcassets */; };
 		C3F0B56B1BE052C600048975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5691BE052C600048975 /* LaunchScreen.storyboard */; };
 		C3F0B5761BE052C600048975 /* WHC_CollectionViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5751BE052C600048975 /* WHC_CollectionViewDemoTests.swift */; };
 		C3F0B5811BE052C600048975 /* WHC_CollectionViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5801BE052C600048975 /* WHC_CollectionViewDemoUITests.swift */; };
-		C3F0B5901BE0533C00048975 /* WHC_StyleTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B58E1BE0533C00048975 /* WHC_StyleTwoVC.swift */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5911BE0533C00048975 /* WHC_StyleTwoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B58F1BE0533C00048975 /* WHC_StyleTwoVC.xib */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5941BE0535000048975 /* WHC_StyleThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5921BE0535000048975 /* WHC_StyleThreeVC.swift */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5951BE0535000048975 /* WHC_StyleThreeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5931BE0535000048975 /* WHC_StyleThreeVC.xib */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5981BE0536E00048975 /* WHC_StyleFourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5961BE0536E00048975 /* WHC_StyleFourVC.swift */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5991BE0536E00048975 /* WHC_StyleFourVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5971BE0536E00048975 /* WHC_StyleFourVC.xib */; settings = {ASSET_TAGS = (); }; };
-		C3F0B59B1BE0538600048975 /* WHC_StyleOneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B59A1BE0538600048975 /* WHC_StyleOneVC.xib */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5B41BE0540A00048975 /* WHC_Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A11BE0540A00048975 /* WHC_Asset.m */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5B51BE0540A00048975 /* WHC_PhotoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A31BE0540A00048975 /* WHC_PhotoListCell.m */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5B61BE0540A00048975 /* WHC_CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A51BE0540A00048975 /* WHC_CameraVC.m */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5B71BE0540A00048975 /* WHC_CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5A61BE0540A00048975 /* WHC_CameraVC.xib */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5B81BE0540A00048975 /* WHC_ChoicePictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A81BE0540A00048975 /* WHC_ChoicePictureVC.m */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5B91BE0540A00048975 /* WHC_ChoicePictureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5A91BE0540A00048975 /* WHC_ChoicePictureVC.xib */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5BA1BE0540A00048975 /* WHC_PictureListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AB1BE0540A00048975 /* WHC_PictureListVC.m */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5BB1BE0540A00048975 /* WHC_PictureListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5AC1BE0540A00048975 /* WHC_PictureListVC.xib */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5BC1BE0540A00048975 /* WHC_ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AE1BE0540A00048975 /* WHC_ImageDisplayView.swift */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5BD1BE0540A00048975 /* WHC_MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AF1BE0540A00048975 /* WHC_MenuItem.swift */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5BF1BE0540A00048975 /* WHC_MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5B11BE0540A00048975 /* WHC_MenuView.swift */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5C11BE0540A00048975 /* WHC_MoreMenuItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5B31BE0540A00048975 /* WHC_MoreMenuItemVC.swift */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5C71BE056CA00048975 /* UIView+WHC_AutoAdapterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5C41BE056CA00048975 /* UIView+WHC_AutoAdapterView.m */; settings = {ASSET_TAGS = (); }; };
-		C3F0B5C81BE056CA00048975 /* UIView+WHC_ViewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5C61BE056CA00048975 /* UIView+WHC_ViewProperty.m */; settings = {ASSET_TAGS = (); }; };
-		C3F8DC9E1BF9CE6500C50EAF /* whc1.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3F8DC9D1BF9CE6500C50EAF /* whc1.gif */; settings = {ASSET_TAGS = (); }; };
+		C3F0B5901BE0533C00048975 /* WHC_StyleTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B58E1BE0533C00048975 /* WHC_StyleTwoVC.swift */; };
+		C3F0B5911BE0533C00048975 /* WHC_StyleTwoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B58F1BE0533C00048975 /* WHC_StyleTwoVC.xib */; };
+		C3F0B5941BE0535000048975 /* WHC_StyleThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5921BE0535000048975 /* WHC_StyleThreeVC.swift */; };
+		C3F0B5951BE0535000048975 /* WHC_StyleThreeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5931BE0535000048975 /* WHC_StyleThreeVC.xib */; };
+		C3F0B5981BE0536E00048975 /* WHC_StyleFourVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5961BE0536E00048975 /* WHC_StyleFourVC.swift */; };
+		C3F0B5991BE0536E00048975 /* WHC_StyleFourVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5971BE0536E00048975 /* WHC_StyleFourVC.xib */; };
+		C3F0B59B1BE0538600048975 /* WHC_StyleOneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B59A1BE0538600048975 /* WHC_StyleOneVC.xib */; };
+		C3F0B5B41BE0540A00048975 /* WHC_Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A11BE0540A00048975 /* WHC_Asset.m */; };
+		C3F0B5B51BE0540A00048975 /* WHC_PhotoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A31BE0540A00048975 /* WHC_PhotoListCell.m */; };
+		C3F0B5B61BE0540A00048975 /* WHC_CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A51BE0540A00048975 /* WHC_CameraVC.m */; };
+		C3F0B5B71BE0540A00048975 /* WHC_CameraVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5A61BE0540A00048975 /* WHC_CameraVC.xib */; };
+		C3F0B5B81BE0540A00048975 /* WHC_ChoicePictureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5A81BE0540A00048975 /* WHC_ChoicePictureVC.m */; };
+		C3F0B5B91BE0540A00048975 /* WHC_ChoicePictureVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5A91BE0540A00048975 /* WHC_ChoicePictureVC.xib */; };
+		C3F0B5BA1BE0540A00048975 /* WHC_PictureListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AB1BE0540A00048975 /* WHC_PictureListVC.m */; };
+		C3F0B5BB1BE0540A00048975 /* WHC_PictureListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F0B5AC1BE0540A00048975 /* WHC_PictureListVC.xib */; };
+		C3F0B5BC1BE0540A00048975 /* WHC_ImageDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AE1BE0540A00048975 /* WHC_ImageDisplayView.swift */; };
+		C3F0B5BD1BE0540A00048975 /* WHC_MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5AF1BE0540A00048975 /* WHC_MenuItem.swift */; };
+		C3F0B5BF1BE0540A00048975 /* WHC_MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5B11BE0540A00048975 /* WHC_MenuView.swift */; };
+		C3F0B5C11BE0540A00048975 /* WHC_MoreMenuItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5B31BE0540A00048975 /* WHC_MoreMenuItemVC.swift */; };
+		C3F0B5C71BE056CA00048975 /* UIView+WHC_AutoAdapterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5C41BE056CA00048975 /* UIView+WHC_AutoAdapterView.m */; };
+		C3F0B5C81BE056CA00048975 /* UIView+WHC_ViewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F0B5C61BE056CA00048975 /* UIView+WHC_ViewProperty.m */; };
+		C3F8DC9E1BF9CE6500C50EAF /* whc1.gif in Resources */ = {isa = PBXBuildFile; fileRef = C3F8DC9D1BF9CE6500C50EAF /* whc1.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,8 @@
 /* Begin PBXFileReference section */
 		C31C0CBC1BE1A85B008511AE /* whc.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whc.gif; sourceTree = "<group>"; };
 		C31C0CBE1BE1A88E008511AE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C3617C921C3373EE00FCEC90 /* WHC_Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WHC_Refresh.swift; sourceTree = "<group>"; };
 		C3D5BC7D1BE0680900690811 /* WHC_StyleThreeVCCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WHC_StyleThreeVCCell.xib; sourceTree = "<group>"; };
-		C3EB970B1BF5A3ED0058E655 /* WHC_Refresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WHC_Refresh.swift; path = ../../../../CRM/CRM/WHC_Unit/Swift/WHC_Refresh.swift; sourceTree = "<group>"; };
 		C3F0B55D1BE052C600048975 /* WHC_CollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHC_CollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F0B5601BE052C600048975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F0B5621BE052C600048975 /* WHC_StyleOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WHC_StyleOneVC.swift; sourceTree = "<group>"; };
@@ -252,11 +252,11 @@
 		C3F0B5AD1BE0540A00048975 /* Swift_Lib */ = {
 			isa = PBXGroup;
 			children = (
+				C3617C921C3373EE00FCEC90 /* WHC_Refresh.swift */,
 				C3F0B5AE1BE0540A00048975 /* WHC_ImageDisplayView.swift */,
 				C3F0B5AF1BE0540A00048975 /* WHC_MenuItem.swift */,
 				C3F0B5B11BE0540A00048975 /* WHC_MenuView.swift */,
 				C3F0B5B31BE0540A00048975 /* WHC_MoreMenuItemVC.swift */,
-				C3EB970B1BF5A3ED0058E655 /* WHC_Refresh.swift */,
 			);
 			path = Swift_Lib;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 			files = (
 				C3F0B5941BE0535000048975 /* WHC_StyleThreeVC.swift in Sources */,
 				C3F0B5631BE052C600048975 /* WHC_StyleOneVC.swift in Sources */,
-				C3EB970C1BF5A3ED0058E655 /* WHC_Refresh.swift in Sources */,
+				C3617C931C3373EE00FCEC90 /* WHC_Refresh.swift in Sources */,
 				C3F0B5BD1BE0540A00048975 /* WHC_MenuItem.swift in Sources */,
 				C3F0B5C71BE056CA00048975 /* UIView+WHC_AutoAdapterView.m in Sources */,
 				C3F0B5B51BE0540A00048975 /* WHC_PhotoListCell.m in Sources */,

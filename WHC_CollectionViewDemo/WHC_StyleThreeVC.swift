@@ -107,7 +107,7 @@ class WHC_StyleThreeVC: UIViewController ,WHCRefreshDelegate{
         self.navigationItem.title = "WHC-集合菜单样式三";
         self.tableView.backgroundColor = UIColor.themeBackgroundColor();
         self.tableView.registerNib(UINib(nibName: kCellName, bundle: NSBundle.mainBundle()), forCellReuseIdentifier: kCellName);
-        self.tableView.whc_setRefreshStyle(refreshStyle: .DownStyle, tableViewHeight: self.view.screenHeight(), delegate: self);
+        self.tableView.whc_setRefreshStyle(refreshStyle: .AllStyle, tableViewHeight: self.view.screenHeight(), delegate: self);
 //        self.tableView.whc_setRefreshStyle(refreshStyle: .AllStyle, refreshAnimationType: WHCRefreshAnimationType.CrossErasure, tableViewHeight: self.view.screenHeight(), delegate: self);
         // Do any additional setup after loading the view.
     }
